@@ -17,26 +17,24 @@ class Database:
     def __init__(self, server, port):
         self.server = server
         self.port = port
+       
+    # Task-3: Method Overriding Polymorphism
+    def connect(self):
+        print(f"Connecting to Base database...")
 
 # Task-1: Separate classes for Orders, Cache & Analytics Database
 
 class OrdersDatabase(Database):
-    
-    # Task-3: Method Overriding Polymorphism
     def connect(self):
         print(f"Connecting to Orders database...")
 
 
 class CacheDatabase(Database):
-    
-    # Task-3: Method Overriding Polymorphism
     def connect(self):
         print(f"Connecting to Cache database...")
 
 
 class AnalyticsDatabase(Database):
-    
-    # Task-3: Method Overriding Polymorphism
     def connect(self):
         print(f"Connecting to Analytics database...")
         
@@ -44,13 +42,14 @@ class AnalyticsDatabase(Database):
 # Testing: 
 
 db1 = OrdersDatabase("127.0.0.1", 5432)  # Connection success!
-db2 = OrdersDatabase("127.0.0.1", 5432)  # Connection Already Exists. Reusing.....
+db1.connect()
+# db2 = OrdersDatabase("127.0.0.1", 5432)  # Connection Already Exists. Reusing.....
 
-db3 = CacheDatabase("127.0.0.1", 5432)  # Connection success!
-db4 = CacheDatabase("127.0.0.1", 5432)  # Connection Already Exists. Reusing.....
+# db3 = CacheDatabase("127.0.0.1", 5432)  # Connection success!
+# db4 = CacheDatabase("127.0.0.1", 5432)  # Connection Already Exists. Reusing.....
 
-db5 = AnalyticsDatabase("127.0.0.1", 5432)  # Connection success!
-db6 = AnalyticsDatabase("127.0.0.1", 5432)  # Connection Already Exists. Reusing.....
+# db5 = AnalyticsDatabase("127.0.0.1", 5432)  # Connection success!
+# db6 = AnalyticsDatabase("127.0.0.1", 5432)  # Connection Already Exists. Reusing.....
 
 
 
